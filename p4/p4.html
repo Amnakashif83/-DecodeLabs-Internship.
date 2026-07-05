@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — Form Validation Project</title>
+  <link rel="stylesheet" href="p4.css" />
+</head>
+<body>
+
+  <main class="page">
+    <section class="card">
+      <header class="card__header">
+        <h1>Create Your Account</h1>
+        <p class="card__subtitle">Project 4 — Form Design &amp; Validation</p>
+      </header>
+
+      <!-- ================= FORM (The Structure) ================= -->
+      <form id="registerForm" novalidate autocomplete="off">
+
+        <!-- NAME FIELD -->
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="e.g. Amna Khan"
+            aria-describedby="name-error"
+            aria-invalid="false"
+            required
+          />
+          <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- EMAIL FIELD -->
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="e.g. amna@example.com"
+            aria-describedby="email-error"
+            aria-invalid="false"
+            required
+          />
+          <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- PASSWORD FIELD -->
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Min 8 chars, upper, lower, number, symbol"
+            aria-describedby="password-error"
+            aria-invalid="false"
+            required
+          />
+          <span id="password-error" class="error-message" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- CONFIRM PASSWORD FIELD -->
+        <div class="field">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Re-enter your password"
+            aria-describedby="confirmPassword-error"
+            aria-invalid="false"
+            required
+          />
+          <span id="confirmPassword-error" class="error-message" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- SUBMIT (The execution trigger) -->
+        <button type="submit" class="btn-submit">Create Account</button>
+
+        <!-- Global success / status banner -->
+        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <script src="p4.js"></script>
+</body>
+</html>

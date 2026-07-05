@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: #eef1f7;
+  color: #1f2430;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  padding: 32px 28px;
+  box-shadow: 0 10px 30px rgba(20, 25, 40, 0.08);
+}
+
+.card__header h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.card__subtitle {
+  margin: 0 0 24px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.field {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1.5px solid #cbd2e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus {
+  border-color: #4c6ef5;
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.15);
+}
+
+/* Invalid state: color + icon via ::before is NOT relied on alone —
+   the text message below always carries the real explanation */
+input[aria-invalid="true"] {
+  border-color: #d92d20;
+  background: #fff5f5;
+}
+
+input[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.15);
+}
+
+input.valid {
+  border-color: #12b76a;
+}
+
+.error-message {
+  min-height: 16px;
+  font-size: 13px;
+  color: #d92d20;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.error-message::before {
+  content: "";
+}
+
+.error-message:not(:empty)::before {
+  content: "⚠ ";
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: #4c6ef5;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.15s ease;
+}
+
+.btn-submit:hover {
+  background: #3b5bdb;
+}
+
+.btn-submit:focus-visible {
+  outline: 3px solid #1c2a6d;
+  outline-offset: 2px;
+}
+
+.form-status {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 0;
+}
+
+.form-status.success {
+  background: #ecfdf3;
+  color: #027a48;
+  border: 1px solid #a6f4c5;
+  padding: 10px 12px;
+}
+
+.form-status.error {
+  background: #fef3f2;
+  color: #b42318;
+  border: 1px solid #fda29b;
+  padding: 10px 12px;
+}
